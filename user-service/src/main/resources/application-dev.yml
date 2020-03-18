@@ -1,0 +1,23 @@
+server:
+  port: 9091
+
+#jdbc数据源配置
+spring:
+  application:
+    name: user-service
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/springcloud?characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai
+    username: root
+    password: 123456
+
+#通用mapper包扫描
+mybatis:
+  type-aliases-package: com.lyc.userservice.pojo
+  #输出SQL
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:10086/eureka
